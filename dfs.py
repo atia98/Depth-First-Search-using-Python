@@ -33,6 +33,6 @@ def dfs(n):
     stack.pop()
     stack_display()
 
-src_node = int(input('Enter the source node'))
+src_node = int(input('Enter the source node: '))
 dfs(src_node)
 print(ans)
