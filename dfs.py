@@ -9,9 +9,9 @@ ad_max = [
 ]
 visited = [0,0,0,0,0,0]
 ans = []
-apar = []
+stack = []
 
-def stack():
+def stack_display():
     for val in apar:
         print(val,end='|')
     print()
@@ -22,16 +22,16 @@ def dfs(n):
     else:
         visited[n] = 1
         num = 0
-        apar.append(n)
-        stack()
+        stack.append(n)
+        stack_display()
         for relation in ad_max[n]:
             if relation != 0:
                 dfs(num)
             num += 1
     #print(n,end='|')
     ans.append(n)
-    apar.pop()
-    stack()
+    stack.pop()
+    stack_display()
 
 src_node = int(input('Enter the source node'))
 dfs(src_node)
